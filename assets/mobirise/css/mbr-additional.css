@@ -1100,7 +1100,9 @@ section.lazy-placeholder:after {
   color: #c1c1c1 !important;
 }
 .cid-qTkA127IK8 {
-  background-image: url("../../../assets/images/mbr-2-1920x1280.jpeg");
+  padding-top: 105px;
+  padding-bottom: 105px;
+  background-image: url("../../../assets/images/mbr-3-1920x1280.jpeg");
 }
 .cid-qTkA127IK8 H1 {
   color: #f7ed4a;
