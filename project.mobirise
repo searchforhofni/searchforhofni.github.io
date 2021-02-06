@@ -63,6 +63,8 @@
     "siteUrl": false,
     "gdpr": false,
     "cookiesAlert": false,
+    "publishType": "local",
+    "publishPath": "file:///C:/Users/hofni/OneDrive/Documents/searchforhofni.github.io-master",
     "publishChangesOnly": true
   },
   "pages": {
