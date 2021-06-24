@@ -1,9 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap);
-
-
-
-
-
 body {
   font-family: Rubik;
 }
@@ -16,7 +10,7 @@ body {
   font-size: 6.8rem;
 }
 .display-2 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'GrindAndDeath_Demo';
   font-size: 3rem;
   font-display: swap;
 }
@@ -24,7 +18,7 @@ body {
   font-size: 4.8rem;
 }
 .display-4 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'GrindAndDeath_Demo';
   font-size: 1rem;
   font-display: swap;
 }
@@ -95,7 +89,7 @@ body {
   background-color: #149dcc !important;
 }
 .bg-success {
-  background-color: #f7ed4a !important;
+  background-color: #fcff12 !important;
 }
 .bg-info {
   background-color: #82786e !important;
@@ -168,23 +162,23 @@ body {
 }
 .btn-success,
 .btn-success:active {
-  background-color: #f7ed4a !important;
-  border-color: #f7ed4a !important;
-  color: #3f3c03 !important;
+  background-color: #fcff12 !important;
+  border-color: #fcff12 !important;
+  color: #121200 !important;
 }
 .btn-success:hover,
 .btn-success:focus,
 .btn-success.focus,
 .btn-success.active {
-  color: #3f3c03 !important;
-  background-color: #eadd0a !important;
-  border-color: #eadd0a !important;
+  color: #121200 !important;
+  background-color: #c2c400 !important;
+  border-color: #c2c400 !important;
 }
 .btn-success.disabled,
 .btn-success:disabled {
-  color: #3f3c03 !important;
-  background-color: #eadd0a !important;
-  border-color: #eadd0a !important;
+  color: #121200 !important;
+  background-color: #c2c400 !important;
+  border-color: #c2c400 !important;
 }
 .btn-warning,
 .btn-warning:active {
@@ -332,22 +326,22 @@ body {
 .btn-success-outline,
 .btn-success-outline:active {
   background: none;
-  border-color: #d2c609;
-  color: #d2c609;
+  border-color: #a9ab00;
+  color: #a9ab00;
 }
 .btn-success-outline:hover,
 .btn-success-outline:focus,
 .btn-success-outline.focus,
 .btn-success-outline.active {
-  color: #3f3c03;
-  background-color: #f7ed4a;
-  border-color: #f7ed4a;
+  color: #121200;
+  background-color: #fcff12;
+  border-color: #fcff12;
 }
 .btn-success-outline.disabled,
 .btn-success-outline:disabled {
-  color: #3f3c03 !important;
-  background-color: #f7ed4a !important;
-  border-color: #f7ed4a !important;
+  color: #121200 !important;
+  background-color: #fcff12 !important;
+  border-color: #fcff12 !important;
 }
 .btn-warning-outline,
 .btn-warning-outline:active {
@@ -430,7 +424,7 @@ body {
   color: #ff3366 !important;
 }
 .text-success {
-  color: #f7ed4a !important;
+  color: #fcff12 !important;
 }
 .text-info {
   color: #82786e !important;
@@ -457,7 +451,7 @@ a.text-secondary:focus {
 }
 a.text-success:hover,
 a.text-success:focus {
-  color: #d2c609 !important;
+  color: #a9ab00 !important;
 }
 a.text-info:hover,
 a.text-info:focus {
@@ -527,7 +521,7 @@ a:hover {
 }
 .mbr-plan-header.bg-success .mbr-plan-subtitle,
 .mbr-plan-header.bg-success .mbr-plan-price-desc {
-  color: #ffffff;
+  color: #ffffde;
 }
 .mbr-plan-header.bg-info .mbr-plan-subtitle,
 .mbr-plan-header.bg-info .mbr-plan-price-desc {
@@ -572,32 +566,6 @@ blockquote {
 }
 .mbr-form .input-group-btn button[type="submit"]:hover {
   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
-}
-.form2 .form-control {
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-}
-.form2 .input-group-btn a.btn {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-}
-.form2 .input-group-btn button[type="submit"] {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-}
-.form3 input[type="email"] {
-  border-radius: 100px !important;
-}
-@media (max-width: 349px) {
-  .form2 input[type="email"] {
-    border-radius: 100px !important;
-  }
-  .form2 .input-group-btn a.btn {
-    border-radius: 100px !important;
-  }
-  .form2 .input-group-btn button[type="submit"] {
-    border-radius: 100px !important;
-  }
 }
 @media (max-width: 767px) {
   .btn {
@@ -1100,10 +1068,10 @@ section.lazy-placeholder:after {
   color: #c1c1c1 !important;
 }
 .cid-qTkA127IK8 {
-  background-image: url("../../../assets/images/mbr-3-1920x1280.jpeg");
+  background-image: url("../../../assets/images/vishnu-mohanan-pfr18jnemv8-unsplash-2000x1502.jpg");
 }
 .cid-qTkA127IK8 H1 {
-  color: #f7ed4a;
+  color: #fff906;
 }
 .cid-qTkA127IK8 .mbr-text,
 .cid-qTkA127IK8 .mbr-section-btn {
@@ -1179,7 +1147,7 @@ section.lazy-placeholder:after {
   stroke: rgba(206, 206, 206, 0.4);
 }
 .cid-rY6R2m4Jpu path {
-  stroke: #f7ed4a;
+  stroke: #ffef00;
 }
 @media (max-width: 991px) and (min-width: 768px) {
   .cid-rY6R2m4Jpu .card {
@@ -1201,7 +1169,7 @@ section.lazy-placeholder:after {
 }
 .cid-rY3bv7mB4n .mbr-author-name {
   font-weight: bold;
-  color: #c4bc3b;
+  color: #ffef00;
 }
 .cid-rY3bv7mB4n .media-container-row {
   word-wrap: break-word;
