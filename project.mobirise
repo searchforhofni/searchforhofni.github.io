@@ -15,13 +15,13 @@
         "mainFont": "Rubik",
         "display1Font": "Rubik",
         "display1Size": 4.25,
-        "display2Font": "Rubik",
+        "display2Font": "GrindAndDeath_Demo",
         "display2Size": 3,
         "display5Font": "Rubik",
         "display5Size": 1.5,
         "display7Font": "Rubik",
         "display7Size": 1,
-        "display4Font": "Rubik",
+        "display4Font": "GrindAndDeath_Demo",
         "display4Size": 1,
         "isRoundedButtons": true,
         "isAnimatedOnScroll": true,
@@ -64,7 +64,7 @@
     "gdpr": false,
     "cookiesAlert": false,
     "publishChangesOnly": true,
-    "mbrsiteDomain": "fr1wggaosp"
+    "mbrsiteDomain": "v7wmj4gidj"
   },
   "pages": {
     "searchforhofni.html": {
@@ -74,7 +74,8 @@
         "meta_descr": "Portfolio and Business site",
         "header_custom": "",
         "footer_custom": "",
-        "html_before": ""
+        "html_before": "",
+        "meta_image": "@PROJECT_PATH@/assets/images/mbr-1-97x97.png"
       },
       "components": [
         {
