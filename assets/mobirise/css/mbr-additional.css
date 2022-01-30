@@ -678,6 +678,97 @@ iframe.lazy-placeholder,
 section.lazy-placeholder:after {
   opacity: 0.3;
 }
+.cid-qTkA127IK8 {
+  background-image: url("../../../assets/images/christian-wiediger-wkfdrhxdmc8-unsplash-2000x1333.jpg");
+}
+.cid-qTkA127IK8 H1 {
+  color: #ffffff;
+}
+.cid-qTkA127IK8 .mbr-text,
+.cid-qTkA127IK8 .mbr-section-btn {
+  text-align: center;
+  color: #ffffff;
+}
+.cid-rY2pWFIibV {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
+}
+.cid-rY2pWFIibV h4 {
+  width: 85%;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.cid-rY2pWFIibV p {
+  color: #767676;
+}
+.cid-rY2pWFIibV .card-wrapper {
+  border-top: 1px solid #2e2e2e;
+  background-color: #ffffff;
+  position: relative;
+  justify-content: unset;
+}
+.cid-rY2pWFIibV .card-wrapper .card-box {
+  padding: 2rem;
+  width: 100%;
+}
+.cid-rY2pWFIibV .card-wrapper .card-box .top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cid-rY2pWFIibV .card-wrapper .card-box .bottom-line {
+  width: 85%;
+}
+@media (max-width: 767px) {
+  .cid-rY2pWFIibV .card-wrapper .card-box .bottom-line {
+    width: 100%;
+  }
+  .cid-rY2pWFIibV .card-wrapper .card-box .bottom-line p {
+    text-align: center;
+    margin: 1rem 0 0 0;
+  }
+}
+.cid-rY2pWFIibV H2 {
+  text-align: center;
+}
+.cid-rY6R2m4Jpu {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #ffffff;
+}
+.cid-rY6R2m4Jpu h3 {
+  text-align: center;
+  font-weight: 300;
+}
+.cid-rY6R2m4Jpu .wrap {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.cid-rY6R2m4Jpu .mbr-section-subtitle {
+  color: #767676;
+}
+.cid-rY6R2m4Jpu .card {
+  -webkit-flex-basis: 100%;
+  flex-basis: 100%;
+  word-wrap: break-word;
+}
+.cid-rY6R2m4Jpu ellipse {
+  stroke: rgba(206, 206, 206, 0.4);
+}
+.cid-rY6R2m4Jpu path {
+  stroke: #000000;
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .cid-rY6R2m4Jpu .card {
+    -webkit-flex-basis: 33%;
+    flex-basis: 33%;
+  }
+}
+.cid-rY6R2m4Jpu P {
+  text-align: center;
+}
 .cid-qTkzRZLJNu .navbar {
   padding: .5rem 0;
   background: #333333;
@@ -1067,97 +1158,6 @@ section.lazy-placeholder:after {
 .cid-qTkzRZLJNu .dropdown-item:hover {
   color: #c1c1c1 !important;
 }
-.cid-qTkA127IK8 {
-  background-image: url("../../../assets/images/vishnu-mohanan-pfr18jnemv8-unsplash-2000x1502.jpg");
-}
-.cid-qTkA127IK8 H1 {
-  color: #fff906;
-}
-.cid-qTkA127IK8 .mbr-text,
-.cid-qTkA127IK8 .mbr-section-btn {
-  text-align: center;
-  color: #ffffff;
-}
-.cid-rY2pWFIibV {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  background-color: #ffffff;
-}
-.cid-rY2pWFIibV h4 {
-  width: 85%;
-  font-weight: 500;
-  margin-bottom: 0;
-}
-.cid-rY2pWFIibV p {
-  color: #767676;
-}
-.cid-rY2pWFIibV .card-wrapper {
-  border-top: 1px solid #2e2e2e;
-  background-color: #ffffff;
-  position: relative;
-  justify-content: unset;
-}
-.cid-rY2pWFIibV .card-wrapper .card-box {
-  padding: 2rem;
-  width: 100%;
-}
-.cid-rY2pWFIibV .card-wrapper .card-box .top-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cid-rY2pWFIibV .card-wrapper .card-box .bottom-line {
-  width: 85%;
-}
-@media (max-width: 767px) {
-  .cid-rY2pWFIibV .card-wrapper .card-box .bottom-line {
-    width: 100%;
-  }
-  .cid-rY2pWFIibV .card-wrapper .card-box .bottom-line p {
-    text-align: center;
-    margin: 1rem 0 0 0;
-  }
-}
-.cid-rY2pWFIibV H2 {
-  text-align: center;
-}
-.cid-rY6R2m4Jpu {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #ffffff;
-}
-.cid-rY6R2m4Jpu h3 {
-  text-align: center;
-  font-weight: 300;
-}
-.cid-rY6R2m4Jpu .wrap {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-}
-.cid-rY6R2m4Jpu .mbr-section-subtitle {
-  color: #767676;
-}
-.cid-rY6R2m4Jpu .card {
-  -webkit-flex-basis: 100%;
-  flex-basis: 100%;
-  word-wrap: break-word;
-}
-.cid-rY6R2m4Jpu ellipse {
-  stroke: rgba(206, 206, 206, 0.4);
-}
-.cid-rY6R2m4Jpu path {
-  stroke: #ffef00;
-}
-@media (max-width: 991px) and (min-width: 768px) {
-  .cid-rY6R2m4Jpu .card {
-    -webkit-flex-basis: 33%;
-    flex-basis: 33%;
-  }
-}
-.cid-rY6R2m4Jpu P {
-  text-align: center;
-}
 .cid-rY3bv7mB4n {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -1166,10 +1166,11 @@ section.lazy-placeholder:after {
 .cid-rY3bv7mB4n .testimonial-text {
   font-style: italic;
   font-weight: 300;
+  text-align: left;
 }
 .cid-rY3bv7mB4n .mbr-author-name {
   font-weight: bold;
-  color: #ffef00;
+  color: #ffffff;
 }
 .cid-rY3bv7mB4n .media-container-row {
   word-wrap: break-word;
