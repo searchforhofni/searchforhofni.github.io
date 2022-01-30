@@ -1,6 +1,6 @@
 {
   "settings": {
-    "name": "My Site-clone",
+    "name": "Searchforhofni",
     "currentPage": "searchforhofni.html",
     "theme": {
       "name": "mobirise4",
@@ -64,7 +64,7 @@
     "gdpr": false,
     "cookiesAlert": false,
     "publishChangesOnly": true,
-    "mbrsiteDomain": "ibl5blkhtj"
+    "mbrsiteDomain": "fr1wggaosp"
   },
   "pages": {
     "searchforhofni.html": {
