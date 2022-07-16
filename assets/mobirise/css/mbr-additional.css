@@ -18,7 +18,7 @@ body {
   font-size: 4.8rem;
 }
 .display-4 {
-  font-family: 'GrindAndDeath_Demo';
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1rem;
   font-display: swap;
 }
@@ -679,10 +679,11 @@ section.lazy-placeholder:after {
   opacity: 0.3;
 }
 .cid-qTkA127IK8 {
-  background-image: url("../../../assets/images/christian-wiediger-wkfdrhxdmc8-unsplash-2000x1333.jpg");
+  background-image: url("../../../assets/images/317367-2000x563.jpg");
 }
 .cid-qTkA127IK8 H1 {
   color: #ffffff;
+  text-align: center;
 }
 .cid-qTkA127IK8 .mbr-text,
 .cid-qTkA127IK8 .mbr-section-btn {
