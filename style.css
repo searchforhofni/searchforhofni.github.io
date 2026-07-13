@@ -199,6 +199,28 @@ a:focus-visible,button:focus-visible,.door:focus-visible,.nav-tab:focus-visible{
 .btn-outline-teal{border:1px solid var(--teal);color:var(--teal);}
 .btn-ochre{background:var(--ochre);color:#1c0b03;font-weight:600;}
 
+/* ===== Clients / Partners marquee ===== */
+.clients{padding:36px 0 40px;background:var(--ink-soft);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+.clients-eyebrow{
+  text-align:center;font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--text-on-ink-muted);margin:0 0 24px;
+}
+.clients-marquee{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);}
+.clients-track{display:flex;align-items:center;gap:64px;width:max-content;animation:marquee 28s linear infinite;}
+.clients-track img{
+  height:40px;width:auto;object-fit:contain;
+  filter:grayscale(1) brightness(1.6) contrast(0.8);opacity:0.7;
+  transition:filter 250ms ease, opacity 250ms ease, transform 250ms ease;
+}
+.clients-track img:hover{filter:none;opacity:1;transform:scale(1.06);}
+@keyframes marquee{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+@media (prefers-reduced-motion: reduce){
+  .clients-track{animation:none;flex-wrap:wrap;justify-content:center;}
+}
+
 /* ===== Portfolio / Work ===== */
 .block-work{background:var(--ink);border-top:1px solid rgba(255,255,255,0.08);}
 .block-work .eyebrow{color:var(--text-on-ink-muted);}

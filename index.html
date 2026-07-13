@@ -68,6 +68,13 @@
     </div>
   </section>
 
+  <section class="clients" aria-label="Clients and partners">
+    <p class="clients-eyebrow">Clients &amp; Partners</p>
+    <div class="clients-marquee">
+      <div class="clients-track" id="clientsTrack"></div>
+    </div>
+  </section>
+
   <!-- ============ DIGITAL & DESIGN ============ -->
   <section class="block block-teal" id="digital">
     <div class="block-inner">
@@ -192,6 +199,7 @@
   <p class="footer-copy">© Copyright 2026 Hofni Gideon — All Rights Reserved</p>
 </footer>
 
+<script src="clients-data.js"></script>
 <script src="portfolio-data.js"></script>
 <script>
   const workGrid = document.getElementById('workGrid');
@@ -225,6 +233,12 @@
   });
 
   renderWork('all');
+
+  const track = document.getElementById('clientsTrack');
+  if (track && typeof clientLogos !== 'undefined') {
+    const set = [...clientLogos, ...clientLogos]; // duplicate for seamless loop
+    track.innerHTML = set.map(c => `<img src="${c.image}" alt="${c.name}" loading="lazy">`).join('');
+  }
 </script>
 </body>
 </html>
