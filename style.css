@@ -92,6 +92,8 @@ a:focus-visible,button:focus-visible,.door:focus-visible,.nav-tab:focus-visible{
   font-family:var(--font-mono);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;
   color:var(--text-on-ink-muted);margin:0 0 18px;
 }
+.eyebrow-badge{display:inline-flex;align-items:center;gap:8px;}
+.eyebrow-badge img{display:block;}
 .hero{position:relative;}
 .hero-split{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
 @media (max-width:720px){.hero-split{grid-template-columns:1fr;min-height:auto;}}
