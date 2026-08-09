@@ -382,7 +382,7 @@ a:focus-visible,button:focus-visible,.door:focus-visible,.nav-tab:focus-visible{
   .dock-btn svg{width:13px;height:13px;}
 }
 
-.site-footer{background:var(--paper);color:var(--text-on-paper);padding:48px 20px 100px;scroll-margin-top:72px;}
+.site-footer{background:var(--paper);color:var(--text-on-paper);padding:48px 20px 64px;scroll-margin-top:72px;}
 .footer-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start;}
 .footer-col{display:flex;flex-direction:column;gap:10px;}
 .footer-logos{display:flex;align-items:center;gap:12px;}
