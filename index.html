@@ -22,7 +22,10 @@
       <img src="assets/images/sfh-logo-branding-192x192.jpg" alt="Searchforhofni CC logo" width="32" height="32">
       <span>Hofni Gideon</span>
     </a>
-    <nav class="nav-tabs" aria-label="Primary">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navTabs">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-tabs" id="navTabs" aria-label="Primary">
       <a href="#digital" class="nav-tab tab-teal" data-section="digital">Digital &amp; Design</a>
       <a href="#construction" class="nav-tab tab-ochre" data-section="construction">Construction &amp; Property</a>
       <a href="#work" class="nav-tab tab-contact">Our Work</a>
@@ -250,6 +253,23 @@
   if (track && typeof clientLogos !== 'undefined') {
     const set = [...clientLogos, ...clientLogos]; // duplicate for seamless loop
     track.innerHTML = set.map(c => `<img src="${c.image}" alt="${c.name}" loading="lazy">`).join('');
+  }
+
+  const navToggle = document.getElementById('navToggle');
+  const navTabs = document.getElementById('navTabs');
+  if (navToggle && navTabs) {
+    navToggle.addEventListener('click', () => {
+      const open = navTabs.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navTabs.querySelectorAll('.nav-tab').forEach(link => {
+      link.addEventListener('click', () => {
+        navTabs.classList.remove('is-open');
+        navToggle.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 </script>
 </body>
