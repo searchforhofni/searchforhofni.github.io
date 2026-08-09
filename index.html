@@ -200,7 +200,7 @@
       <div class="cta-left">
         <h2 class="cta-title">Let's Build Together <span class="cta-sparkle" aria-hidden="true">✦</span></h2>
         <p class="cta-text">Open for web &amp; software development work, IT and networking projects, construction &amp; property jobs, and collaborations across both Searchforhofni CC and HOI Investments CC.</p>
-        <a href="mailto:hofnigideon1@gmail.com" class="cta-btn">Get in touch <span aria-hidden="true">→</span></a>
+        <a href="mailto:hofnigideon1@gmail.com" class="cta-btn" id="connectTrigger">Get in touch <span aria-hidden="true">→</span></a>
       </div>
       <div class="cta-right">
         <ul class="contact-list">
@@ -268,6 +268,25 @@
   <a href="https://wa.me/264813728892" class="dock-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 10.5c.3 2.4 2.6 4.7 5 5"/></svg>
   </a>
+</div>
+
+<div class="connect-overlay" id="connectOverlay" aria-hidden="true">
+  <div class="connect-modal" role="dialog" aria-modal="true" aria-labelledby="connectTitle">
+    <button class="connect-close" id="connectClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <h2 class="connect-title" id="connectTitle">Let's Connect <span class="cta-sparkle" aria-hidden="true">✦</span></h2>
+    <p class="connect-subtitle">Send a message for software projects, construction &amp; property jobs, or collaborations.</p>
+    <form class="connect-form" id="connectForm">
+      <input type="text" name="name" class="connect-input" placeholder="Your Name" required>
+      <input type="email" name="email" class="connect-input" placeholder="Your Email Address" required>
+      <input type="tel" name="phone" class="connect-input" placeholder="Mobile Number (e.g. +264 81 234 5678)">
+      <input type="text" name="subject" class="connect-input" placeholder="Subject / Project Type">
+      <textarea name="message" class="connect-input connect-textarea" placeholder="Tell me about your project or job details..." required></textarea>
+      <button type="submit" class="connect-submit">Send Message <span aria-hidden="true">🚀</span></button>
+      <p class="connect-note">This opens your email app with the message pre-filled, addressed to Hofni.</p>
+    </form>
+  </div>
 </div>
 
 <script src="clients-data.js"></script>
@@ -342,6 +361,54 @@
         navToggle.classList.remove('is-open');
         navToggle.setAttribute('aria-expanded', 'false');
       });
+    });
+  }
+
+  const connectTrigger = document.getElementById('connectTrigger');
+  const connectOverlay = document.getElementById('connectOverlay');
+  const connectClose = document.getElementById('connectClose');
+  const connectForm = document.getElementById('connectForm');
+
+  function openConnect(e) {
+    if (e) e.preventDefault();
+    connectOverlay.classList.add('is-open');
+    connectOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeConnect() {
+    connectOverlay.classList.remove('is-open');
+    connectOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (connectTrigger && connectOverlay) {
+    connectTrigger.addEventListener('click', openConnect);
+    connectClose.addEventListener('click', closeConnect);
+    connectOverlay.addEventListener('click', (e) => {
+      if (e.target === connectOverlay) closeConnect();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && connectOverlay.classList.contains('is-open')) closeConnect();
+    });
+    connectForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(connectForm);
+      const name = data.get('name') || '';
+      const email = data.get('email') || '';
+      const phone = data.get('phone') || '';
+      const subject = data.get('subject') || 'New project inquiry';
+      const message = data.get('message') || '';
+
+      const body =
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        (phone ? `Phone: ${phone}\n` : '') +
+        `\n${message}`;
+
+      const mailto = `mailto:hofnigideon1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      closeConnect();
+      connectForm.reset();
     });
   }
 </script>
