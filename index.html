@@ -280,16 +280,33 @@
     workGrid.innerHTML = '';
     const items = filter === 'all' ? portfolioItems : portfolioItems.filter(i => i.category === filter);
     items.forEach(item => {
+      const images = item.images && item.images.length ? item.images : [item.image];
+      const tagClass = item.category === 'digital' ? 'tag-teal' : 'tag-ochre';
+      const tagLabel = item.category === 'digital' ? 'Digital & Design' : 'Construction & Property';
       const card = document.createElement('div');
       card.className = 'work-card';
       card.innerHTML = `
-        <img src="${item.image}" alt="${item.title}" loading="lazy">
-        <div class="work-card-body">
-          <span class="work-card-tag ${item.category === 'digital' ? 'tag-teal' : 'tag-ochre'}">${item.category === 'digital' ? 'Digital & Design' : 'Construction & Property'}</span>
-          <p class="work-card-title">${item.title}</p>
-          ${item.client ? `<p class="work-card-client">${item.client}</p>` : ''}
-          <p class="work-card-desc">${item.description}</p>
+        <div class="work-card-media">
+          <img src="${images[0]}" alt="${item.title}" loading="lazy">
+          <span class="work-photo-badge">${images.length} ${images.length === 1 ? 'Photo' : 'Photos'}</span>
+          <div class="work-card-overlay">
+            <p class="work-card-title">${item.title}</p>
+            <span class="work-card-tag ${tagClass}">${tagLabel}</span>
+          </div>
+          ${images.length > 1 ? `<div class="work-dots">${images.map((_, i) => `<button class="work-dot${i === 0 ? ' is-active' : ''}" data-i="${i}" aria-label="Photo ${i + 1}"></button>`).join('')}</div>` : ''}
         </div>`;
+      if (images.length > 1) {
+        const img = card.querySelector('img');
+        card.querySelectorAll('.work-dot').forEach(dot => {
+          dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const i = Number(dot.dataset.i);
+            img.src = images[i];
+            card.querySelectorAll('.work-dot').forEach(d => d.classList.remove('is-active'));
+            dot.classList.add('is-active');
+          });
+        });
+      }
       workGrid.appendChild(card);
     });
   }
