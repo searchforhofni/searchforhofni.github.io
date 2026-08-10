@@ -436,4 +436,8 @@ a:focus-visible,button:focus-visible,.door:focus-visible,.nav-tab:focus-visible{
   padding:14px;border-radius:10px;transition:transform 200ms ease,filter 200ms ease;
 }
 .connect-submit:hover,.connect-submit:focus-visible{transform:translateY(-2px);filter:brightness(1.08);}
-.connect-note{font-size:0.75rem;color:var(--text-on-ink-muted);text-align:center;margin:2px 0 0;}
+.connect-note{font-size:0.75rem;color:var(--text-on-ink-muted);text-align:center;margin:2px 0 0;transition:color 200ms ease;}
+.connect-note.is-success{color:var(--teal);font-weight:600;}
+.connect-note.is-error{color:#e06a5a;}
+.connect-note.is-error a{color:var(--ochre);text-decoration:underline;}
+.connect-submit:disabled{opacity:0.7;cursor:wait;}
