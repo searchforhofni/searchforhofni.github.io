@@ -277,14 +277,14 @@
     </button>
     <h2 class="connect-title" id="connectTitle">Let's Connect <span class="cta-sparkle" aria-hidden="true">✦</span></h2>
     <p class="connect-subtitle">Send a message for software projects, construction &amp; property jobs, or collaborations.</p>
-    <form class="connect-form" id="connectForm">
+    <form class="connect-form" id="connectForm" action="https://formspree.io/f/xrpzpqrl" method="POST">
       <input type="text" name="name" class="connect-input" placeholder="Your Name" required>
       <input type="email" name="email" class="connect-input" placeholder="Your Email Address" required>
       <input type="tel" name="phone" class="connect-input" placeholder="Mobile Number (e.g. +264 81 234 5678)">
-      <input type="text" name="subject" class="connect-input" placeholder="Subject / Project Type">
+      <input type="text" name="_subject" class="connect-input" placeholder="Subject / Project Type">
       <textarea name="message" class="connect-input connect-textarea" placeholder="Tell me about your project or job details..." required></textarea>
       <button type="submit" class="connect-submit">Send Message <span aria-hidden="true">🚀</span></button>
-      <p class="connect-note">This opens your email app with the message pre-filled, addressed to Hofni.</p>
+      <p class="connect-note" id="connectNote">Sends directly to Hofni — no email app needed.</p>
     </form>
   </div>
 </div>
@@ -392,23 +392,44 @@
     });
     connectForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      const submitBtn = connectForm.querySelector('.connect-submit');
+      const note = document.getElementById('connectNote');
       const data = new FormData(connectForm);
-      const name = data.get('name') || '';
-      const email = data.get('email') || '';
-      const phone = data.get('phone') || '';
-      const subject = data.get('subject') || 'New project inquiry';
-      const message = data.get('message') || '';
 
-      const body =
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        (phone ? `Phone: ${phone}\n` : '') +
-        `\n${message}`;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      note.textContent = 'Sends directly to Hofni — no email app needed.';
+      note.classList.remove('is-error', 'is-success');
 
-      const mailto = `mailto:hofnigideon1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-      closeConnect();
-      connectForm.reset();
+      fetch(connectForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      })
+        .then((response) => {
+          if (response.ok) {
+            note.textContent = 'Message sent — thanks! Hofni will get back to you soon.';
+            note.classList.add('is-success');
+            connectForm.reset();
+            setTimeout(closeConnect, 1800);
+          } else {
+            throw new Error('Formspree error');
+          }
+        })
+        .catch(() => {
+          const name = data.get('name') || '';
+          const email = data.get('email') || '';
+          const phone = data.get('phone') || '';
+          const subject = data.get('_subject') || 'New project inquiry';
+          const message = data.get('message') || '';
+          const body = `Name: ${name}\nEmail: ${email}\n${phone ? `Phone: ${phone}\n` : ''}\n${message}`;
+          note.innerHTML = `Couldn't send automatically — <a href="mailto:hofnigideon1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}">click here to email directly</a> instead.`;
+          note.classList.add('is-error');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Send Message <span aria-hidden="true">🚀</span>';
+        });
     });
   }
 </script>
