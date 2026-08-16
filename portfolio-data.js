@@ -34,13 +34,6 @@ const portfolioItems = [
     description: "CV/resume redesign for a job applicant."
   },
   {
-    images: ["assets/images/portfolio/placeholder-mmk.jpg"],
-    title: "Dealership Documents",
-    category: "digital",
-    client: "MMK Shipdenk Holdings",
-    description: "Ongoing quotations, invoices and booking letters."
-  },
-  {
     images: ["assets/images/portfolio/placeholder-construction.jpg"],
     title: "Property Maintenance",
     category: "construction",
