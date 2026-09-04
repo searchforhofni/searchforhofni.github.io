@@ -316,15 +316,35 @@
         </div>`;
       if (images.length > 1) {
         const mediaInner = card.querySelector('.work-card-media-inner');
-        card.querySelectorAll('.work-dot').forEach(dot => {
+        const dots = card.querySelectorAll('.work-dot');
+        let current = 0;
+        let timer = null;
+
+        function goTo(i) {
+          current = i;
+          mediaInner.innerHTML = mediaTag(images[current], item.title);
+          dots.forEach(d => d.classList.remove('is-active'));
+          dots[current].classList.add('is-active');
+        }
+        function startSlideshow() {
+          stopSlideshow();
+          timer = setInterval(() => goTo((current + 1) % images.length), 4000);
+        }
+        function stopSlideshow() {
+          if (timer) clearInterval(timer);
+        }
+
+        dots.forEach(dot => {
           dot.addEventListener('click', (e) => {
             e.stopPropagation();
-            const i = Number(dot.dataset.i);
-            mediaInner.innerHTML = mediaTag(images[i], item.title);
-            card.querySelectorAll('.work-dot').forEach(d => d.classList.remove('is-active'));
-            dot.classList.add('is-active');
+            goTo(Number(dot.dataset.i));
+            startSlideshow();
           });
         });
+        card.addEventListener('mouseenter', stopSlideshow);
+        card.addEventListener('mouseleave', startSlideshow);
+
+        startSlideshow();
       }
       workGrid.appendChild(card);
     });
