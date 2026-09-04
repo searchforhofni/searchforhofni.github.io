@@ -142,6 +142,10 @@ a:focus-visible,button:focus-visible,.door:focus-visible,.nav-tab:focus-visible{
   .half-teal:hover{animation:none;box-shadow:inset 0 0 0 1px rgba(239,190,70,0.5), 0 0 20px 2px rgba(239,190,70,0.4);}
   .half-ochre:hover{animation:none;box-shadow:inset 0 0 0 1px rgba(217,156,27,0.5), 0 0 20px 2px rgba(217,156,27,0.4);}
 }
+@media (hover:none){
+  .half-teal{animation:door-glow-teal 3.2s ease-in-out infinite;}
+  .half-ochre{animation:door-glow-ochre 3.2s ease-in-out infinite;}
+}
 .half-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:6px;transition:transform 300ms cubic-bezier(.2,.8,.2,1);}
 .half-icon svg{width:26px;height:26px;}
 .half-teal .half-icon{background:rgba(239,190,70,0.18);color:var(--teal);}
@@ -294,6 +298,7 @@ a:focus-visible,button:focus-visible,.door:focus-visible,.nav-tab:focus-visible{
   }
 }
 @media (prefers-reduced-motion: reduce){.about-photo img{animation:none !important;}}
+@media (hover:none){.about-photo img{animation:rim-glow 3.2s ease-in-out infinite;}}
 .about-hello{
   font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.2rem;
   color:var(--text-on-ink-muted);margin:0 0 2px;
