@@ -275,6 +275,26 @@
   const workGrid = document.getElementById('workGrid');
   const filters = document.querySelectorAll('.work-filter');
 
+  function isVideo(path) {
+    return /\.(mp4|webm|ogg)$/i.test(path);
+  }
+  function mediaTag(path, alt) {
+    return isVideo(path)
+      ? `<video src="${path}" autoplay muted loop playsinline></video>`
+      : `<img src="${path}" alt="${alt}" loading="lazy">`;
+  }
+  function mediaLabel(images) {
+    const hasVideo = images.some(isVideo);
+    const count = images.length;
+    if (!hasVideo) return `${count} ${count === 1 ? 'Photo' : 'Photos'}`;
+    const photoCount = images.filter(p => !isVideo(p)).length;
+    const videoCount = images.filter(isVideo).length;
+    const parts = [];
+    if (photoCount) parts.push(`${photoCount} ${photoCount === 1 ? 'Photo' : 'Photos'}`);
+    if (videoCount) parts.push(`${videoCount} ${videoCount === 1 ? 'Clip' : 'Clips'}`);
+    return parts.join(' · ');
+  }
+
   function renderWork(filter) {
     workGrid.innerHTML = '';
     const items = filter === 'all' ? portfolioItems : portfolioItems.filter(i => i.category === filter);
@@ -286,21 +306,21 @@
       card.className = 'work-card';
       card.innerHTML = `
         <div class="work-card-media">
-          <img src="${images[0]}" alt="${item.title}" loading="lazy">
-          <span class="work-photo-badge">${images.length} ${images.length === 1 ? 'Photo' : 'Photos'}</span>
+          <div class="work-card-media-inner">${mediaTag(images[0], item.title)}</div>
+          <span class="work-photo-badge">${mediaLabel(images)}</span>
           <div class="work-card-overlay">
             <p class="work-card-title">${item.title}</p>
             <span class="work-card-tag ${tagClass}">${tagLabel}</span>
           </div>
-          ${images.length > 1 ? `<div class="work-dots">${images.map((_, i) => `<button class="work-dot${i === 0 ? ' is-active' : ''}" data-i="${i}" aria-label="Photo ${i + 1}"></button>`).join('')}</div>` : ''}
+          ${images.length > 1 ? `<div class="work-dots">${images.map((_, i) => `<button class="work-dot${i === 0 ? ' is-active' : ''}" data-i="${i}" aria-label="${isVideo(images[i]) ? 'Clip' : 'Photo'} ${i + 1}"></button>`).join('')}</div>` : ''}
         </div>`;
       if (images.length > 1) {
-        const img = card.querySelector('img');
+        const mediaInner = card.querySelector('.work-card-media-inner');
         card.querySelectorAll('.work-dot').forEach(dot => {
           dot.addEventListener('click', (e) => {
             e.stopPropagation();
             const i = Number(dot.dataset.i);
-            img.src = images[i];
+            mediaInner.innerHTML = mediaTag(images[i], item.title);
             card.querySelectorAll('.work-dot').forEach(d => d.classList.remove('is-active'));
             dot.classList.add('is-active');
           });
