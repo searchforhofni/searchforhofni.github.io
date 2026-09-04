@@ -20,6 +20,26 @@
 
 const portfolioItems = [
   {
+    images: [
+      "assets/images/portfolio/SFH-IT-and-Digital-Solutions.jpg",
+      "assets/videos/portfolio/SFH-IT-and-Digital-Solutions.mp4"
+    ],
+    title: "IT & Digital Solutions",
+    category: "digital",
+    client: "",
+    description: "Service poster covering hardware & setup, graphic & web design, and security & business IT."
+  },
+  {
+    images: [
+      "assets/images/portfolio/SFH-Construction-and-Property.jpg",
+      "assets/videos/portfolio/SFH-Construction-and-Property.mp4"
+    ],
+    title: "Construction & Property Services",
+    category: "construction",
+    client: "",
+    description: "Service poster covering construction, specialized trades, and cleaning services."
+  },
+  {
     images: ["assets/images/portfolio/placeholder-poster.jpg"],
     title: "Event Poster",
     category: "digital",
