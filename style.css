@@ -247,8 +247,8 @@ a:focus-visible,button:focus-visible,.door:focus-visible,.nav-tab:focus-visible{
 .work-card{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);transition:transform 220ms cubic-bezier(.2,.8,.2,1), border-color 220ms ease;}
 .work-card:hover{transform:translateY(-4px);border-color:rgba(239,190,70,0.35);}
 .work-card-media{position:relative;}
-.work-card-media img{width:100%;height:260px;object-fit:cover;display:block;transition:transform 400ms ease;}
-.work-card:hover .work-card-media img{transform:scale(1.05);}
+.work-card-media img,.work-card-media video{width:100%;height:260px;object-fit:cover;display:block;transition:transform 400ms ease;}
+.work-card:hover .work-card-media img,.work-card:hover .work-card-media video{transform:scale(1.05);}
 .work-photo-badge{
   position:absolute;top:12px;right:12px;background:rgba(16,19,26,0.75);backdrop-filter:blur(4px);
   color:var(--text-on-ink);font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.03em;
